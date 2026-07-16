@@ -350,6 +350,55 @@ transform:scale(1.2);
 background:#eee;
 }
 
+/* FAQ */
+
+.faq{
+max-width:850px;
+margin:auto;
+text-align:left;
+}
+
+.faq-item{
+background:#fff;
+border-radius:12px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+overflow:hidden;
+}
+
+.faq-question{
+width:100%;
+padding:18px 22px;
+background:white;
+border:none;
+cursor:pointer;
+font-size:17px;
+font-weight:600;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.faq-question span{
+font-size:24px;
+transition:.3s;
+}
+
+.faq-answer{
+display:none;
+padding:0 22px 20px;
+line-height:1.8;
+color:#555;
+}
+
+.faq-item.active .faq-answer{
+display:block;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+
 </style>
 </head>
 
@@ -459,6 +508,129 @@ Semua dirancang untuk memberikan kenyamanan dan pengalaman terbaik selama Anda m
 <img src="bk.jpg" onclick="zoom(this.src)">
 <img src="fn3.webp" onclick="zoom(this.src)">
 <img src="dl1.webp" onclick="zoom(this.src)">
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="section fade-up">
+<h2>Pertanyaan yang Sering Ditanyakan (FAQ)</h2>
+
+<div class="faq">
+
+<div class="faq-item">
+<button class="faq-question">
+Jam check-in dan check-out?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Check-in dimulai pukul <b>15.00 WIB</b> dan check-out maksimal pukul <b>12.00 WIB</b>. Jika ingin early check-in atau late check-out, silakan hubungi resepsionis terlebih dahulu karena bergantung pada ketersediaan kamar.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah harga kamar sudah termasuk sarapan?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Ya. Setiap kamar sudah termasuk sarapan untuk <b>2 orang</b>.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah tersedia parkir?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Tersedia area parkir yang luas dan aman untuk mobil maupun motor.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah hotel memiliki lift?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Mohon maaf, saat ini hotel belum memiliki lift. Namun staf kami siap membantu membawa barang bawaan Anda.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah tersedia WiFi?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Ya, tersedia WiFi gratis dengan koneksi cepat di seluruh area hotel.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah boleh merokok di kamar?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Seluruh kamar merupakan area bebas rokok. Tamu dapat merokok di area balkon atau rooftop.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah tersedia kolam renang?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Mohon maaf, untuk sementara kami masih belum ada kolam renang.
+Tetapi jika berminat, bisa kami bantu di cabang kami terletak di sebelah hotel.
+Di Paradise Resort.
+
+Dengan konfirmasi terlebih dahulu di resceptionist.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Bagaimana cara melakukan reservasi?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Klik tombol <b>Booking Sekarang</b> atau hubungi WhatsApp kami. Tim reservasi akan membantu proses pemesanan.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Berapa kapasitas setiap tipe kamar?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Junior Room, Junior King, dan Junior View untuk maksimal 2 orang. Superior Room, Superior Fantasy, Deluxe Room, dan Executive Room dapat menampung hingga 4 orang.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Apakah hotel dekat tempat wisata?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Ya, hotel berada di pusat Kota Batu dan dekat dengan Alun-Alun Batu, Museum Angkut, Jatim Park Group, Lippo Plaza Batu, serta berbagai destinasi wisata lainnya.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">
+Berapa luas kamar ?
+<span>+</span>
+</button>
+<div class="faq-answer">
+Luas setiap kamar sekitar 23 m², dengan desain yang nyaman dan dilengkapi fasilitas seperti AC, Smart TV, WiFi gratis, shower air panas, perlengkapan mandi, serta fasilitas pembuat teh dan kopi.
+</div>
+</div>
+
 </div>
 </div>
 
@@ -701,6 +873,18 @@ window.addEventListener("load", function(){
 setTimeout(()=>{
 document.getElementById("loader").classList.add("hide");
 },1200);
+});
+
+document.querySelectorAll(".faq-question").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const item=btn.parentElement;
+
+item.classList.toggle("active");
+
+});
+
 });
 </script>
 
